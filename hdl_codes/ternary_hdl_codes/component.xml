@@ -1,0 +1,2125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>top_cnn_accelerator</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>clk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>top_cnn_accelerator</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>fdc91630</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>top_cnn_accelerator</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>fdc91630</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>f64a5dae</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>resetn_d</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>start</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>done</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s1_clka</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s1_ena</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s1_wea</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s1_addra</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">16</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s1_dina</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s1_douta</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s6_clka</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s6_ena</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s6_wea</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s6_addra</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">10</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s6_dina</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s6_douta</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s8_ena</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s8_wea</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s8_addra</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">9</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s8_dina</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s8_douta</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_clka_1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_clka_2</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_clka_3</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_clka_4</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_clka_5</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_clka_6</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_clka_7</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_clka_8</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_clka_9</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_clka_10</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s8_clka</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_ena_1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_ena_2</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_ena_3</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_ena_4</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_ena_5</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_ena_6</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_ena_7</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_ena_8</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_ena_9</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_ena_10</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_wea_1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_wea_2</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_wea_3</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_wea_4</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_wea_5</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_wea_6</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_wea_7</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_wea_8</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_wea_9</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_wea_10</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_addra_1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_addra_2</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_addra_3</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_addra_4</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_addra_5</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_addra_6</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_addra_7</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_addra_8</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_addra_9</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_addra_10</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_dina_1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_dina_2</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_dina_3</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_dina_4</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_dina_5</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_dina_6</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_dina_7</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_dina_8</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_dina_9</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_dina_10</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_douta_1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_douta_2</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_douta_3</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_douta_4</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_douta_5</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_douta_6</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_douta_7</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_douta_8</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_douta_9</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s7_douta_10</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+  </spirit:model>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/BRAM8/BRAM8.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_result</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_10/BRAM7_10.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_10</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_9/BRAM7_9.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_9</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_8/BRAM7_8.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_8</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_7/BRAM7_7.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_7</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_6/BRAM7_6.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_6</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_5/BRAM7_5.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_5</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_4/BRAM7_4.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_4</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_3/BRAM7_3.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_3</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_2/BRAM7_2.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_2</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_1/BRAM7_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_1</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM6/BRAM6.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_conv_weight</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_8/BRAM2_8.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_8</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_7/BRAM2_7.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_7</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_6/BRAM2_6.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_6</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_5/BRAM2_5.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_5</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_4/BRAM2_4.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_4</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_3/BRAM2_3.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_3</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_2/BRAM2_2.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_2</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_1/BRAM2_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_1</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM1/BRAM1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_input_fmap</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/convolution.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fc_layer.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/max_pooling.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/top_convolution_core.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/top_cnn_accelerator.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_95ea336a</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="blk_mem_gen" xilinx:version="8.4">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/BRAM8/BRAM8.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_result</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_10/BRAM7_10.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_10</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_9/BRAM7_9.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_9</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_8/BRAM7_8.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_8</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_7/BRAM7_7.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_7</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_6/BRAM7_6.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_6</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_5/BRAM7_5.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_5</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_4/BRAM7_4.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_4</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_3/BRAM7_3.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_3</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_2/BRAM7_2.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_2</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM7_1/BRAM7_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_FC_layer_weight_1</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM6/BRAM6.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_conv_weight</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_8/BRAM2_8.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_8</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_7/BRAM2_7.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_7</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_6/BRAM2_6.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_6</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_5/BRAM2_5.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_5</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_4/BRAM2_4.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_4</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_3/BRAM2_3.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_3</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_2/BRAM2_2.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_2</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM2_1/BRAM2_1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_fmap1_1</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/BRAM1/BRAM1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_input_fmap</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/convolution.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fc_layer.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/max_pooling.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/top_convolution_core.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/top_cnn_accelerator.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="blk_mem_gen" xilinx:version="8.4">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/top_cnn_accelerator_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_f64a5dae</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>top_cnn_accelerator_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">top_cnn_accelerator_v1_0</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>top_cnn_accelerator_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:xpmLibraries>
+        <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
+      </xilinx:xpmLibraries>
+      <xilinx:coreRevision>14</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2025-06-07T17:48:46Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6097a4d0_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2ee35771_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5122ee14_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@526d13a0_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@114fb1a6_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@311e57aa_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a05109b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2ee92c1b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@216e9681_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@11cab8b0_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@753aa6ba_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62483c95_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1408220_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@18d0a3ee_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4edf83b3_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49d512e2_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68bd5427_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c7b4ef8_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22789a16_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b4a1865_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@253b5ca3_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4155ca97_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22bddf68_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58b9905_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ebde83f_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ee2309b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6636b94b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@315f137a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5df113cb_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e478acf_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b3a6a35_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@258963c5_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e2b7a83_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2654c131_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34268b4d_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c85c964_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1503e4cc_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45689cbd_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54998ea3_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@59e41e4_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12c15c0e_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30fa169_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@17c52cb7_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a3f0e6e_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c4445bd_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d3eee86_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6028b310_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3688ff3b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c081ed1_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7963b161_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@128efad3_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@46f2dc06_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c15be26_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7af0f818_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10fe7fed_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4112c198_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ea99422_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@172ce7c2_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@516ebcd6_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68822785_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f87bbc9_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42a9d133_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41c3a26c_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5090f2f5_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a7ff129_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3907da65_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7bd9341c_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45abb198_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43ded7a4_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25564ae3_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@44d18087_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76ed4c3b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@155fece9_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25531f7a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4540f8fe_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@73b2ddfa_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b9e69e6_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c8c5a54_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1441f6fd_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@368b93e5_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5473ed3f_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2fad774d_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3141490d_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62e933a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60678a7a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a1f7fca_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@9e76cad_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@69fe6670_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5ad926a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68ed0eee_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@28ac6cc3_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25d5f986_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@635aa94_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21695e3a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6cfe8a5e_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ff3344f_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5918088e_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3fc1354d_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@571ddbca_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4cbd3df3_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34eaca07_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43f08ee8_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@74ddaab2_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f717345_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2dc7114c_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62326b11_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5da0034e_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e0fb520_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b727a41_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c881a69_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@bc296e6_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ff4b5e4_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c6e0a51_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35f8f77a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@11ff2f08_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@538c8697_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b48a48a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43dc3126_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f96a3c1_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3dba320f_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6ff270aa_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@131a992d_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5a5c7189_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d60d0b3_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@14c9f75_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42f80090_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f3896ab_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e6d09b7_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@572a0d91_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@31bf96ec_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30cb410b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c08869c_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@235237fc_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45ff8ecc_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68f86734_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4740e4d9_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7106e873_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35974019_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d7835a9_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62ad3799_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ce4043e_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@69545b38_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@19f95749_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2db22fee_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b9a5bff_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f2a08e2_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b492522_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@429393b1_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4bfd62a9_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d283dca_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d09834f_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3de829d5_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@699ad2a8_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a108e17_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21c6fdd0_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@630fc911_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47f673d6_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f47b2ab_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13b6071b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60f698c2_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1166e8d7_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@689e0f0a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7514e66c_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63f9f940_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16fbd059_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35acfab5_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24fc8478_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32d1f686_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e73bebb_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7768cd6f_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43672333_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@15fd13c1_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2ddd116c_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@14eb0ce6_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@375f3975_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@387d08f0_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62f3e1de_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e8c4ecc_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@533e5091_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ed0f8cc_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3949f13b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b1b6b56_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5cb8003_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@705fe539_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7284f0d0_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60046fc_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f5f7c18_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37c27a6d_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@46285a83_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e394e24_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2c7844bf_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@599a541f_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e7f16f2_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e5fe784_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64bb648b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@f178779_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@334083b4_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@500acfad_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@bad461d_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e364e33_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c285c9f_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@31f5978c_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70a9dc5d_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2778c5a8_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58c0bbe2_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e31569a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c9061be_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25e7c8db_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48b74e5b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66c49962_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43e68dbf_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64b1975_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d4bba1f_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77c69a6b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1e5f26d9_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@361abed7_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d4ae40c_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7891317b_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77737934_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@285486ba_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e84496d_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37530fa9_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e4de97f_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4ae9262d_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@cc0f1ad_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f19ee6_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6860a492_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5de923a1_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@9039e45_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5088e2b9_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21e7dd44_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65370fcf_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f8efdf5_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@39d6c968_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@510765d5_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6596ae54_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3103b032_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c8f5e9c_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72912699_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c49e982_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6447930a_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32f3cfa6_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b212a93_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b1a3c1e_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5a6f8198_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b725a49_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4ac95143_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37381c81_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3fafaf3_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@280743b7_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@691a8a18_ARCHIVE_LOCATION">d:/npu/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6adb41e6_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@177215e0_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5bb9a99b_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7bffedb9_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@20b4de9d_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ee5f9bf_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e9d217_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3979c38d_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2e55daeb_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10e3ea90_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6fdd3c60_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c587a4a_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b6198c1_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@655e100c_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12e05da5_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ed591e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21a05b2e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a2fd8e5_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1e43b787_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34773b8c_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b7757b0_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c9452cb_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62d806a2_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@667d28ff_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b03a76_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@421d2c07_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@514bd398_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@8b4c324_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f8a028e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37541b6e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21f313f3_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26025446_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2e19bea1_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36594820_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77f63360_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f3ab3ef_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f57716d_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48543817_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5ca8c22c_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1eb6ae39_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34d822a7_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@20ad0b8e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7cbc3450_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49ee4a15_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@119aab75_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70923938_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e3d665f_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49a54511_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f620597_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49ed2fd9_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cce931e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6549dda8_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a87b574_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3aca6649_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1728ebb9_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@215b124b_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49dcd0f2_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5872c80f_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cc4442_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56e3945e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4da09a02_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35e60b12_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21c787d3_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@71652e57_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2394ba32_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e3afe04_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c3150ae_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a06820_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49cc860_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@545c353a_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@505079a8_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@495aacfb_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@17d78fdb_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@92956f_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4ff57278_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6728979a_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6080f369_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d1ea2aa_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2347b2af_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25af0d57_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48a9d7da_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5eddbaca_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@728beaae_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@27048df9_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c820387_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5a6a8694_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12d06d0f_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4a1bebdb_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@775376eb_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@14827146_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@53c204a1_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@239c95e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a285054_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@655bf892_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7252f264_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1836601a_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@360aa6ba_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cd1953a_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7450fa9e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4352ec3d_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43dec4dd_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@15650f2b_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b46ef2b_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@622bf81a_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68adc5e7_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1642573_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@409e3ee9_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c25fb4_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1e474b84_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2760f2e2_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6aef758c_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@256aeb65_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e160cba_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@464cff28_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a085b03_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24ebb37_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5740ef01_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c6f79de_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@cc9caa1_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d9226b_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54c1921b_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@187e81cd_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@707955be_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@521148b7_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35af048a_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@446af38e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4571fe2f_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b0dfebc_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@358800a4_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b781444_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e433b7_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@443ed822_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66ac805c_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26abc917_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5975bca3_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4aa96394_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7254f81d_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@600541f7_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5ea46d7e_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55d36a92_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c1a4f43_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41a9b5f0_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@aab5684_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3fc04b3b_ARCHIVE_LOCATION">d:/SystemDesign/Week_12_AS4/npu_final/ip_npu</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2021.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="a88d4390"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c542f4a8"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="a00e1ae5"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="8f48c355"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>
