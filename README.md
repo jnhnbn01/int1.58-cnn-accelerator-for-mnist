@@ -1,4 +1,4 @@
-CNN Accelerator for MNIST Classification
+Efficient CNN Accelerator Design for MNIST Dataset using Row-stationary Dataflow and Ternary Quantization
 
 Running inference of very simple CNN(conv3-conv3-maxpool-fc) on FPGA
 INT8 means the baseline int8 quantized model
