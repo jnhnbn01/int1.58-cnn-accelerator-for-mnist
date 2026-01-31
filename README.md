@@ -6,7 +6,7 @@ Ternary means the ternary quantized model that we modified the baseline model an
 
 - In the 'bitstreams' folder, there are bitstream files and you can test the accelerator upload it onto PYNQ-Z2 board.
 - In the 'trained_weights' there are .npy files including weights of ternary quantized and baseline models.
-- In the 'hdl_codes' folder, there are Verilog codes of the accelerator that we designed. Due to the large file size of our project, I uploaed ip folder in thse project, including entire verilog codes.
+- In the 'hdl_codes' folder, there are Verilog codes of the accelerator that we designed. Due to the large file size of our project, I uploaed only 'ip' folder in whole project files, including entire verilog codes.
 - In the 'quantization_codes' folder, you can find the PyTorch implementation of ternary QAT for the baseline model.
 
 
